@@ -1,0 +1,34 @@
+html, body, #mainContainer {
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.tweet {
+    border: 1px solid black;
+    padding: 20px;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+#feedContainer {
+    width: 25%;
+    height: 400px;
+}
+
+#newsContainer {
+    width: 50%;
+    height: 100%;
+    overflow: scroll;
+}
+
+#youtubeContainer {
+    width: 25%;
+    height: 100%;
+    overflow: scroll;
+}
