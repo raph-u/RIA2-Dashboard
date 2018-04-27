@@ -143,7 +143,7 @@ header svg {
 
 
 .newsTile img {
-    margin-right: 10px;
+    width: 100%;
 }
 
 .newsTile .tileText {
@@ -154,6 +154,7 @@ header svg {
 .newsTile a {
     width: 45%;
     font-size: 2em;
+    margin-right: 20px;
 }
 
 .newsTile .authInfo {
