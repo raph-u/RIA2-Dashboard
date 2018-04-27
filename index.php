@@ -1,7 +1,5 @@
 <?php
     include 'functions.php';
-
-    echo "</br>";
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +16,7 @@
         <h1>The verge Dashboard</h1>
     </header>
     <div id="mainContainer">
-        <div id="feedContainer">
+        <div id="tweetContainer">
             <h4>Tweets!</h4>
         </div>
 

@@ -1,6 +1,6 @@
 'use strict'
 
-var feedContainer = $('#youtubeContainer');
+var youtubeContainer = $('#youtubeContainer');
 
 var jqxhr = $.get( "youtubeFeed/index.php")
     .done(function(youtubeFeed) {
@@ -25,9 +25,10 @@ var jqxhr = $.get( "youtubeFeed/index.php")
             var mainContent = '<div><p>' + title + '</div>';
             var toolBar = '<div>Published at: ' + moment(publishDate).format('DD.MM.YYYY') + '</div>';
 
-            feedContainer.append('<div class="video">' + thumbnail + mainContent + toolBar + '</div>');
+            youtubeContainer.append('<div class="video">' + thumbnail + mainContent + toolBar + '</div>');
         }
     })
-    .fail(function() {
-        alert( "error" );
+    .fail(function(test) {
+        console.log(test);
+        alert( "Youtube error" );
     })

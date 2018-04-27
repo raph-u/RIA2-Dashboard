@@ -12,7 +12,11 @@
 
     function request($type, $url, $headerData = null) {
         $options= array(
-            'http' => array()
+            'http' => array(),
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false
+            )
         );
         if ($headerData !== null)
             $options['http'] = $headerData;

@@ -1,6 +1,6 @@
 'use strict'
 
-var feedContainer = $('#feedContainer');
+var tweetContainer = $('#tweetContainer');
 
 var jqxhr = $.get( "twitterFeed/index.php")
     .done(function(tweetFeed) {
@@ -46,7 +46,7 @@ var jqxhr = $.get( "twitterFeed/index.php")
             // Contains retweet count, favorite count
             var toolBar = '<div>retweet: ' + retweetCount + ' favorite: ' + favoriteCount + '</div>';
 
-            feedContainer.append('<div class="tweet">' + posterPic + mainContent + toolBar + '</div>');
+            tweetContainer.append('<div class="tweet">' + posterPic + mainContent + toolBar + '</div>');
         }
     })
     .fail(function() {
