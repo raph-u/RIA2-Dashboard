@@ -27,35 +27,38 @@ Le design a complètement été retravaillé de manière à recréer le "look an
 **Note:** Le site est principalement destiné à un usage sur navigateur desktop. Pour une meilleur expérience, veillez à utiliser **Google Chrome** ainsi qu'un écran dont la résolution est **au moins 1440x900**.
 ### Intégration d'Instagram
 #### Informations nécessaires à l'usage optimal de l'API
-    - Client ID
-    - Client Secret
+* Client ID
+* Client Secret
 
-    Ces informations doivent être fournies par le détenteur du compte qui doit ajouter une nouvelle application depuis le panel de gestion de clients de son compte.
+Ces informations doivent être fournies par le détenteur du compte qui doit ajouter une nouvelle application depuis le panel de gestion de clients de son compte.
 
-    Lors de l'ajout de, cette nouvelle application, un ```Client ID``` et ```Client Secret``` seront générés et pourront être utilisés pour récupérer les informations relatives au compte Instagram.
+Lors de l'ajout de, cette nouvelle application, un ```Client ID``` et ```Client Secret``` seront générés et pourront être utilisés pour récupérer les informations relatives au compte Instagram.
 #### Indicateurs potentiellement intégrables
-    **Informations de profil**
-    - Nombre de posts effectués
-    - Nombre de comptes qui nous suivent
-    - Nombre de comptes que l'on suit
-    - Nombre de vues / like 
+**Informations de profil**
+* Nombre de posts effectués
+* Nombre de comptes qui nous suivent
+* Nombre de comptes que l'on suit
+* Nombre de vues / like 
 
-    **Infos associées à un poste**
-    - Nombre de likes
-    - Date du poste
-    - Nombre de commentaire + commentaires en eux-mêmes
+**Infos associées à un poste**
+* Nombre de likes
+* Date du poste
+* Nombre de commentaire + commentaires en eux-mêmes
 
 #### Etapes nécessaires à l'implémentation de l'API au sein du dashboard
-    1. Développer une logique PHP permettant d'envoyer des requêtes d'interrogation à l'API d'instagram en se basant sur les fonctions suivantes contenues dans ```functions.php```: 
-    ```loadConfig()```: Permet charger le Client ID / Client Secret depuis le fichier ```config.json``` pour pouvoir intégrer ces information dans les requêtes d'authentification vers l'API.
-    ```request($type, $url, $headerData = null)``` pour effectuer une requête vers l'API.
-    Les données doivent ensuite être retournées au format JSON.
-    Exemple de fichier du même rôle: ```YoutubeFeed/index.php```.
-    2. Développer un une logique javascript permettant de traiter les informations retournées par l'API et de créer des éléments HTML les comportant afin de les intégrer au DOM pour les afficher à l'utilisateur.
-    **Note**: En l'état, ce fichier est responsable de faire une requête AJAX vers un fichier assumant le rôle expliqué au point précédent de manière à ce que ce dernier fasse une requête vers l'API, puis retourne les données au format JSON. Ces données seront donc traitées en javascript.
-    3. Intégrer les informations relatives à l'API dans ```config.json``` en respectant la structure présente et en en prenant compte lors de chargement de données via l'usage de la fonction ```loadConfig()```.
+1. Développer une logique PHP permettant d'envoyer des requêtes d'interrogation à l'API d'instagram en se basant sur les fonctions suivantes contenues dans ```functions.php```: 
+```loadConfig()```: Permet charger le Client ID / Client Secret depuis le fichier ```config.json``` pour pouvoir intégrer ces information dans les requêtes d'authentification vers l'API.
+```request($type, $url, $headerData = null)``` pour effectuer une requête vers l'API.
+Les données doivent ensuite être retournées au format JSON.
+Exemple de fichier du même rôle: ```YoutubeFeed/index.php```.
 
-    **Note**: JSON est actuellement employé mais XML ou autre pourraient l'être également, à partir moment où le fichier assumant le rôle expliqué au premier point retourne du XML, par ex. Et, que le fichier décrit au deuxième point, soit en mesure de traiter ces données.
+2. Développer un une logique javascript permettant de traiter les informations retournées par l'API et de créer des éléments HTML les comportant afin de les intégrer au DOM pour les afficher à l'utilisateur.
+
+   **Note**: En l'état, ce fichier est responsable de faire une requête AJAX vers un fichier assumant le rôle expliqué au point précédent de manière à ce que ce dernier fasse une requête vers l'API, puis retourne les données au format JSON. Ces données seront donc traitées en javascript.
+
+3. Intégrer les informations relatives à l'API dans ```config.json``` en respectant la structure présente et en en prenant compte lors de chargement de données via l'usage de la fonction ```loadConfig()```.
+
+**Note**: JSON est actuellement employé mais XML ou autre pourraient l'être également, à partir moment où le fichier assumant le rôle expliqué au premier point retourne du XML, par ex. Et, que le fichier décrit au deuxième point, soit en mesure de traiter ces données.
 
 ### Refactorisation
 #### Changements nécessaires à la limitation d'interventions
