@@ -20,3 +20,8 @@ Exemple: un dossier pour Twitter, un pour NewsApi, et pour youtube
 
 Chacun de ces dossiers contient un fichier php qui se charge de faire une requête vers l'API à laquelle il correspond. En cas de succès, il retourne le résultat de la requête sous forme de json.
 Pour chacun de ces fichiers php, il existe un fichier js dont le but est de faire une requête sur le fichier PHP correspondant de manière à récupérer le json contenant les données nécessaires.
+
+## Améliorations
+### Design
+### Intégration d'Instagram
+### REfactorisation

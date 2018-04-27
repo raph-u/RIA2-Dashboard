@@ -1,34 +1,107 @@
+* {
+    font-family: 'Asap Condensed', sans-serif;
+}
+
 html, body, #mainContainer {
-    height: 100vh;
+    margin: 0;
+    max-height: 100%;
+    background-color: #000000;
+    color: #ffffff;
 }
 
-h1 {
+header {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    background-image: url(https://cdn.vox-cdn.com/uploads/chorus_asset/file/9982475/VER_CES18_MH_4.0.jpg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 1px solid #333333;
+}
+
+header svg {
+    width: 35%;
+}
+
+#subtitle {
+    width: 35%;
+}
+
+#subtitle h3 {
+    text-transform: uppercase;
     text-align: center;
-}
-
-.tweet {
-    border: 1px solid black;
-    padding: 20px;
+    margin-bottom: 0;
 }
 
 #mainContainer {
-    display: flex;
-    flex-direction: row;
+    width: 95%;
+    margin: 0 auto;
 }
 
 #feedContainer {
-    width: 25%;
-    height: 400px;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(90deg,#f7c626 15%,#f68c2f 40%,#e5127d 85%);
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
-#newsContainer {
+#feedHeader {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #333333;
+}
+
+.feedHeading {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.feedHeading img {
+    height: 25px;
+}
+
+.feedHeading h3 {
+    text-transform: uppercase;
+    color: rgb(229, 18, 125);
+}
+
+.feed {
+    height: 100vh;
+    overflow: scroll;
+}
+
+/*Twitter*/
+#tweetContainer, #twitterHeading {
+    width: 25%;
+}
+
+/*News*/
+#newsContainer, #newsHeading {
     width: 50%;
-    height: 100%;
-    overflow: scroll;
+    padding-left: 2px;
+    padding-right: 2px;
 }
 
-#youtubeContainer {
+/*YouTube*/
+#youtubeContainer, #youtubeHeading {
     width: 25%;
-    height: 100%;
-    overflow: scroll;
+}
+
+.feedTile {
+    margin-top: 2px;
+    background-color: #000000;
+    padding-bottom: 15px;
+}
+
+/*MISC*/
+/*Disable scrollBars:*/
+::-webkit-scrollbar { 
+    display: none; 
 }

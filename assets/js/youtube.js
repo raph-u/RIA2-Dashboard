@@ -21,11 +21,11 @@ var jqxhr = $.get( "youtubeFeed/index.php")
             var videoId = details.videoId; // Used to build the video URL
 
             // Build the video HTML structure
-            var thumbnail = '<a href="https://www.youtube.com/watch?v=' + videoId +'"><img src="' + thumbnailURL + '"></img></a>';
+            var thumbnail = '<a href="https://www.youtube.com/watch?v=' + videoId +'" target="_blank"><img src="' + thumbnailURL + '"></img></a>';
             var mainContent = '<div><p>' + title + '</div>';
             var toolBar = '<div>Published at: ' + moment(publishDate).format('DD.MM.YYYY') + '</div>';
 
-            youtubeContainer.append('<div class="video">' + thumbnail + mainContent + toolBar + '</div>');
+            youtubeContainer.append('<div class="video feedTile">' + thumbnail + mainContent + toolBar + '</div>');
         }
     })
     .fail(function(test) {

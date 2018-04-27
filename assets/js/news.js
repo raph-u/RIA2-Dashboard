@@ -25,7 +25,7 @@ var jqxhr = $.get( "newsFeed/index.php")
                 var toolBar = '<div>By <span>' + author + '</span> | <span>' + moment(publishDate).format('DD.MM.YYYY'); + '</span></div>';
 
                 // Feed the HTML with news
-                newsContainer.append('<div class="news">' + image + descriptionText + toolBar + '</div>');
+                newsContainer.append('<div class="news feedTile">' + image + descriptionText + toolBar + '</div>');
             }
         }
     })

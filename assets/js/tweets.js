@@ -46,7 +46,7 @@ var jqxhr = $.get( "twitterFeed/index.php")
             // Contains retweet count, favorite count
             var toolBar = '<div>retweet: ' + retweetCount + ' favorite: ' + favoriteCount + '</div>';
 
-            tweetContainer.append('<div class="tweet">' + posterPic + mainContent + toolBar + '</div>');
+            tweetContainer.append('<div class="tweet feedTile">' + posterPic + mainContent + toolBar + '</div>');
         }
     })
     .fail(function() {
