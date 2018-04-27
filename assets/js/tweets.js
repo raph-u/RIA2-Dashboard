@@ -19,8 +19,11 @@ var jqxhr = $.get( "twitterFeed/index.php")
             var pic = undefined; // Holds the tweet pic, if any
             var media = null;
             var actualPicture = '';
+            var tweetUrl = tweetData['url'];
 
             var extendedEntities = tweetFeed[tweet]['extended_entities'];
+            var entities = tweetFeed[tweet]['entities'];
+
             // Are there extended entities ?
             if (extendedEntities !== undefined) {
                 // Wheat about medias ?
@@ -33,6 +36,12 @@ var jqxhr = $.get( "twitterFeed/index.php")
                     }
                 }
             }
+            
+            // Define the tweet URL
+            if (entities !== undefined) {
+                if (entities['media'] !== undefined)
+                    tweetUrl = entities['media'][0]['url'];
+            }
 
             // Define the picture html
             if (pic !== undefined) {
@@ -41,12 +50,14 @@ var jqxhr = $.get( "twitterFeed/index.php")
 
             // Build the profile picture
             var posterPic = '<img src="' + profilePictureUrl + '"></img>';
-            // Contains the tweets text, images / videos
-            var mainContent = '<div><p>' + tweetData['text'] + '</p>' + actualPicture + '</div>';
+            // Contains the tweets text
+            var topContent = '<div class="topTweetInfo">' + posterPic + '<a href="' + tweetUrl + '" target="_blank" class="pinkable">' + tweetData['text'] + '</a></div>';
+            // Contains tweet pictures / videos
+            var mediaContainer = '<div class="tweetMedia"><a href="' + tweetUrl + '" target="_blank" class="pinkable">' + actualPicture + '</a></div>'
             // Contains retweet count, favorite count
-            var toolBar = '<div>retweet: ' + retweetCount + ' favorite: ' + favoriteCount + '</div>';
+            var toolBar = '<div class="tweetInfo">retweet: <span class="pink">' + retweetCount + '</span> | favorite: <span class="pink">' + favoriteCount + '</span></div>';
 
-            tweetContainer.append('<div class="tweet feedTile">' + posterPic + mainContent + toolBar + '</div>');
+            tweetContainer.append('<div class="tweet feedTile">' + topContent + mediaContainer + toolBar + '</div>');
         }
     })
     .fail(function() {

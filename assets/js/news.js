@@ -20,12 +20,13 @@ var jqxhr = $.get( "newsFeed/index.php")
                 var newsUrl = currentNews['url'];
 
                 // Define the HTML structure
-                var image = '<img src="' + imageUrl + '" width="172.767" height="97.1667"></img>';
-                var descriptionText = '<p>' + description + '</p>';
-                var toolBar = '<div>By <span>' + author + '</span> | <span>' + moment(publishDate).format('DD.MM.YYYY'); + '</span></div>';
+                var image = '<a href="' + newsUrl + '" target="_blank"><img src="' + imageUrl + '" width="345" height="195"></img></a>';
+                var titleText = '<a href="' + newsUrl + '" class="pinkable" target="_blank">' + title + '</a>';
+                var toolBar = '<div class="authInfo">By <span class="pink">' + author + '</span>'; // | <span>' + moment(publishDate).format('DD.MM.YYYY'); + '</span></div>
+                var textualContent = '<div class="tileText">' + titleText + toolBar + '</div>';
 
                 // Feed the HTML with news
-                newsContainer.append('<div class="news feedTile">' + image + descriptionText + toolBar + '</div>');
+                newsContainer.append('<div class="news feedTile rowTile newsTile">' + image + textualContent + '</div>');
             }
         }
     })

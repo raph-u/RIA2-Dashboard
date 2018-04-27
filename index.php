@@ -27,12 +27,15 @@
         <div id="feedHeader">
             <div id="twitterHeading" class="feedHeading">
                 <img src="assets/images/twitter.png" alt="Twitter logo">
+                <h3>Tweeter feed</h3>
             </div>
             <div id="newsHeading" class="feedHeading">
+                <img src="assets/images/news.png" alt="News logo">
                 <h3>News</h3>
             </div>
             <div id="youtubeHeading" class="feedHeading">
                 <img src="assets/images/youtube.png" alt="Youtube logo">
+                <h3>Youtube videos</h3>
             </div>
         </div>
 

@@ -19,13 +19,15 @@ var jqxhr = $.get( "youtubeFeed/index.php")
             var title = snippet.title;
             var publishDate = details.videoPublishedAt;
             var videoId = details.videoId; // Used to build the video URL
+            var videoUrl = 'https://www.youtube.com/watch?v=' + videoId;
 
             // Build the video HTML structure
-            var thumbnail = '<a href="https://www.youtube.com/watch?v=' + videoId +'" target="_blank"><img src="' + thumbnailURL + '"></img></a>';
-            var mainContent = '<div><p>' + title + '</div>';
-            var toolBar = '<div>Published at: ' + moment(publishDate).format('DD.MM.YYYY') + '</div>';
+            var thumbnail = '<a href="'+ videoUrl +'" target="_blank"><img src="' + thumbnailURL + '"></img></a>';
+            var mainContent = '<div><a class="pinkable" href="'+ videoUrl +'" target="_blank">' + title + '</a></div>';
+            var toolBar = '<div class="pubInfo">Published on: <span class="pink">' + moment(publishDate).format('DD.MM.YYYY') + '</span></div>';
+            var textualContent = '<div class="tileText">' + mainContent + toolBar + '</div>';
 
-            youtubeContainer.append('<div class="video feedTile">' + thumbnail + mainContent + toolBar + '</div>');
+            youtubeContainer.append('<div class="video feedTile rowTile youtubeTile">' + thumbnail + textualContent + '</div>');
         }
     })
     .fail(function(test) {

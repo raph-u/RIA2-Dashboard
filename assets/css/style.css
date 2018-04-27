@@ -65,16 +65,43 @@ header svg {
 
 .feedHeading img {
     height: 25px;
+    margin-right: 10px;
 }
 
 .feedHeading h3 {
     text-transform: uppercase;
-    color: rgb(229, 18, 125);
 }
 
 .feed {
     height: 100vh;
     overflow: scroll;
+}
+
+#tweetContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+#tweetContainer .topTweetInfo {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px 0px 10px;
+    margin-bottom: 10px;
+}
+
+.topTweetInfo img {
+    height: 35px;
+    margin-right: 10px;
+}
+
+.tweetMedia {
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.tweetInfo {
+    padding-left: 10px;
+    font-size: 0.85em;
 }
 
 /*Twitter*/
@@ -100,8 +127,67 @@ header svg {
     padding-bottom: 15px;
 }
 
+.rowTile {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+}
+
+.colTile {
+    /*display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;*/
+}
+
+
+.newsTile img {
+    margin-right: 10px;
+}
+
+.newsTile .tileText {
+    margin-top: 15px;
+    width: 45%;
+}
+
+.newsTile a {
+    width: 45%;
+    font-size: 2em;
+}
+
+.newsTile .authInfo {
+    margin-top: 15px;
+}
+
+.youtubeTile {
+    padding-left: 10px;
+}
+
+.youtubeTile img {
+    margin-right: 10px;
+}
+
+.youtubeTile .tileText {
+    margin-top: 10px;
+}
+
+.youtubeTile .pubInfo {
+    margin-top: 5px;
+    font-size: 0.85em;
+}
+
 /*MISC*/
 /*Disable scrollBars:*/
 ::-webkit-scrollbar { 
     display: none; 
+}
+
+a, a:hover, a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.pink, .pinkable:hover {
+    color: #e5127d;
 }
